@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+        <link href="style.css" rel="stylesheet">
+	<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script><![endif]-->
+	<title></title>
+</head>
+
+<body>
+<div class="wrapper">
+<header class="header">
+<div id="logo">
+   <a href="index.html" ><img src="img/logo.png"/></a>
+</div>
+<div id="titlelogo">
+   <a href="index.html" ><img src="img/title-logo1.png"/></a>
+</div>
+
+
+ <nav class="menu">
+    <ul class="topmenu">
+ <li><a href = "">Главная</li></a>
+ <li><a href = "">Обо мне</li></a>
+ <li><a href = "">Творчество</li></a>
+</ul>
+</nav>
+
+<div id="bgmenu"></div>
+<div class="iconsmenu">
+<div id="icon1"></div>
+<div id="icon2"></div>
+<div id="icon3"></div>
+<div id="icon4"></div>
+<div id="icon5"></div>
+</div>
+<div class="wardrobe">
+</div>
+<div class="modal-overlay" id="modal-overlay"></div>
+
+<div class="modal" id="modal" aria-hidden="true" aria-labelledby="modalTitle" aria-describedby="modalDescription" role="dialog">
+	<div id="bigmap">
+  <iframe src="https://www.google.com/maps/d/embed?mid=1Tfr5K7JRUL21gxxD80ePBC-CSmo" width="1280" height="720"></iframe>
+</div>
+
+</div>
+<div id="map">
+	<a href="#" onclick="click"><img src="img/map.png"></a>
+</div>
+
+<!--<iframe src="https://goo.gl/maps/3hsci9Ek8f62" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>-->
+<div id="table"></div>
+<div id="lamp"></div>
+<div class="modal-overlay1" id="modal-overlay1"></div>
+
+<div class="modal1" id="modal1" aria-hidden="true" aria-labelledby="modalTitle1" aria-describedby="modalDescription1" role="dialog1">
+	<div id="folder-web">
+		<a href="#" ><img src="img/folder.png"></a>
+	</div>
+	<div id="titlefolder-web">
+		<p>Web</p>
+	</div>
+	<div id="folder-poems">
+		<a href="#" ><img src="img/folder.png"></a>
+	</div>
+	<div id="titlefolder-poems">
+		<p>Стихи</p>
+	</div>
+	<div id="folder-photo">
+		<a href="#" ><img src="img/folder.png"></a>
+	</div>
+	<div id="titlefolder-photo">
+		<p>Фото</p>
+	</div>
+	</div>
+<div id="display">
+<a href="#" onclick="click"><img src="img/monitor.png"></a>
+</div>
+
+<div id="keyboard"></div>
+<div class="avtorization">
+<div id="login">
+<!--<a href="login.php">Вход</a>-->
+</div>
+<div id="signup">
+<!--<a href="signup.php">Регистрация</a>-->
+</div>
+</div>
+</header>
+<div class="middle">
+
+        <div class="container">
+            <main class="content">
+
+</main>
+</div>
+</div>
+<footer class="footer">
+		<strong>Footer:</strong> Mus elit Morbi mus enim lacus at quis Nam eget morbi. Et semper urna urna non at cursus dolor vestibulum neque enim. Tellus interdum at laoreet laoreet lacinia lacinia sed Quisque justo quis. Hendrerit scelerisque lorem elit orci tempor tincidunt enim Phasellus dignissim tincidunt. Nunc vel et Sed nisl Vestibulum odio montes Aliquam volutpat pellentesque. Ut pede sagittis et quis nunc gravida porttitor ligula.
+	</footer><!-- .footer -->
+
+</div><!-- .wrapper -->
+
+<script>
+		var modal = document.querySelector("#modal"),
+		 modal1 = document.querySelector("#modal1"),
+		    modalOverlay = document.querySelector("#modal-overlay"),
+				  modalOverlay1 = document.querySelector("#modal-overlay1"),
+		    map = document.querySelector("#map"),
+				display = document.querySelector("#display");
+modalOverlay.addEventListener("click",function(){
+modal.style.display='none';
+modalOverlay.style.display='none';
+});
+map.addEventListener("click", function() {
+	modal.classList.toggle("closed");
+	modal.style.display='block';
+	modalOverlay.style.display='block';
+	modalOverlay.classList.toggle("closed");
+});
+
+modalOverlay1.addEventListener("click",function(){
+modal1.style.display='none';
+modalOverlay1.style.display='none';
+});
+	display.addEventListener("click", function() {
+		modal1.classList.toggle("closed1");
+		modal1.style.display='block';
+		modalOverlay1.style.display='block';
+		modalOverlay1.classList.toggle("closed1");
+	});
+</script>
+
+
+</body>
+</html>

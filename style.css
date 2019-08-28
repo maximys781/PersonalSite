@@ -1,0 +1,508 @@
+
+@font-face{
+    font-family: 'Christmas ScriptC';
+    src: local('Christmas ScriptC'), local('ChristmasScriptC'), url('christmasscriptc.woff2') format('woff2'), url('christmasscriptc.woff') format('woff'), url('christmasscriptc.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+.modal {
+  /* ааЕ аОаБбаЗаАбаЕаЛбаНаО  block */
+  display: none;
+
+
+  width: 1024px;
+  max-width: 100%;
+
+  height: 600px;
+  max-height: 100%;
+
+  position: fixed;
+
+  z-index: 100;
+
+  left: 50%;
+  top: 50%;
+
+  /* аІаЕаНбббаЕаМ */
+  transform: translate(-50%, -50%);
+
+}
+#bigmap{margin-top: -155px;margin-left: -130px;}
+
+
+.modal-overlay {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 30;
+
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.modal1 {
+  /* ааЕ аОаБбаЗаАбаЕаЛбаНаО  block */
+  display: none;
+  width: 826px;
+  max-width: 100%;
+background-image: url(img/bigmonitor.png);
+  height: 647px;
+  max-height: 100%;
+
+  position: fixed;
+
+  z-index: 100;
+
+  left: 50%;
+  top: 40%;
+
+  /* аІаЕаНбббаЕаМ */
+  transform: translate(-50%, -50%);
+
+}
+#folder-web{width: 57px;height: 52px;position: absolute;margin-top: 26px;margin-left: 18px;}
+#folder-web:hover img{
+	color: #fa0000;
+    -webkit-box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+    box-shadow: 0 3px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+}
+.fade {
+    transition: background-color 1000ms;
+}
+
+.fade:hover {
+    background-color: #039be5;
+}
+#titlefolder-web{font-size: 20px;font-family:Minion Pro;font-style: Regular;color:#ffffff;margin-top:110px;margin-left: 54px;position: absolute;text-align:center;}
+#folder-poems{width: 57px;height: 52px;position: absolute;margin-top: 119px;margin-left: 18px;}
+#folder-poems:hover img{
+	color: #fa0000;
+    -webkit-box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+    box-shadow: 0 3px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+}
+.fade {
+    transition: background-color 1000ms;
+}
+
+.fade:hover {
+    background-color: #039be5;
+}
+#titlefolder-poems{font-size: 20px;font-family:Minion Pro;font-style: Regular;color:#ffffff;margin-top:201px;margin-left: 54px;position: absolute;text-align:center;}
+#folder-photo{width: 57px;height: 52px;position: absolute;margin-top: 212px;margin-left: 18px;}
+#folder-photo:hover img{
+	color: #fa0000;
+    -webkit-box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+    box-shadow: 0 3px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+}
+.fade {
+    transition: background-color 1000ms;
+}
+
+.fade:hover {
+    background-color: #039be5;
+}
+#titlefolder-photo{font-size: 20px;font-family:Minion Pro;font-style: Regular;color:#ffffff;margin-top:292px;margin-left: 54px;position: absolute;text-align:center;}
+
+.modal-overlay1 {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 30;
+
+  background: rgba(0, 0, 0, 0.3);
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+
+
+body {
+background-color: #effbdb;
+margin:0 auto;
+background-repeat: no-repeat;
+	font-family: 12px/18px Arial, sans-serif,Segoe UI,Christmas ScriptC;
+}
+p{
+	line-height:normal;
+}
+
+
+input:required {
+	box-shadow: none;
+}
+textarea {
+	box-shadow: none;
+	background:url(images/bg-message.png)  no-repeat;
+	width: 20%;
+	border:none;
+	height:60px;
+	font-family: Segoe UI;
+	font-style: regular;
+	font-weight:500;
+	color: #010101;
+	font-size: 15px;
+	margin-left: 5px;
+	border-width: 2px;
+	text-align: left;
+	outline: none;
+	overflow: auto;
+	line-height: normal;
+}
+a {
+  display: block;
+  padding: 25px 36px;
+  text-decoration: none;
+ /* outline: none;*/
+  line-height:1;
+  font-family: Christmas ScriptC;
+  font-size: 29px;
+  text-align:center;
+  cursor:pointer;
+  transition: .5s linear;
+	color:#101010;
+}
+
+a:hover:after,
+a:focus:after {
+    width: 100%;
+
+}
+.checkbox {
+display: none;
+}
+/* Задаем внешний вид для нашего кастомного чекбокса. Все обязательные свойства прокомментированы, остальные же свойства меняйте по вашему усмотрению */
+.checkbox-custom {
+position: relative;      /* Обязательно задаем, чтобы мы могли абсолютным образом позиционировать псевдоэлемент внютри нашего кастомного чекбокса */
+width: 23px;             /* Обязательно задаем ширину */
+height: 26px;            /* Обязательно задаем высоту */
+background-image: url(img/checkbox.png);
+cursor: pointer;
+}
+/* Кастомный чекбокс и лейбл центрируем по вертикали. Если вам это не требуется, то вы можете убрать свойство vertical-align: middle из данного правила, но свойство display: inline-block обязательно должно быть */
+.checkbox-custom,
+.label {
+display: inline-block;
+font-family: Minion Pro;
+font-style: regular;
+color: #000000;
+font-size: 14px;
+outline: none;
+line-height: normal;
+vertical-align: middle;
+}
+/* Если реальный чекбокс у нас отмечен, то тогда добавляем данный признак и к нашему кастомному чекбоксу  */
+.checkbox:checked + .checkbox-custom::before {
+content: "";             /* Добавляем наш псевдоэлемент */
+display: block;			 /* Делаем его блочным элементом */
+position: absolute;      /* Позиционируем его абсолютным образом */
+top: 7px;
+	right: 2px;
+	bottom: 2px;
+	left: 5px;
+width: 13px;
+height: 9px;
+background-image: url(img/tick.png);
+}
+
+.wrapper {
+  width: 100%;
+min-width: 1024px;
+max-width: 1366px;
+margin: 0 auto;
+height: auto !important;
+	margin: 0 auto;
+	height: auto !important;
+}
+
+/* Header
+-----------------------------------------------------------------------------*/
+.header{
+  width: 100%;
+min-width: 1024px;
+max-width: 1366px;
+height: 768px;
+position: relative;
+background-image: url(img/background1.jpg);
+background-repeat: no-repeat;
+margin:0 auto;
+margin-top:-20px;
+}
+#logo{width:125px;height:125px;position:absolute; margin-top:40px;}
+#titlelogo{width:217px;height:60px;position:absolute; margin-top:59px;margin-left:95px;}
+#bgmenu{width:493px;height: 111px;margin-top:0px;position:relative;;margin-left:840px;background-image: url(img/bgmenu.png);background-repeat:no-repeat;}
+.iconsmenu{
+position: relative;
+}
+#icon1{width:58px;height: 62px;position: absolute;margin-left: 894px;background-image: url(img/glode.png);margin-top: -126px;}
+#icon2{width:58px;height: 39px;position: absolute;background-image: url(img/car.png);margin-top: -96px;margin-left: 969px;}
+#icon3{width:60px;height: 69px;position: absolute;background-image: url(img/skull.png);margin-top: -126px;margin-left: 1049px;}
+#icon4{width:57px;height: 51px;position: absolute;background-image: url(img/shuttle.png);margin-top: -107px;margin-left: 1131px;}
+#icon5{width:74px;height: 61px;position: absolute;background-image: url(img/ink.png);margin-top: -123px;margin-left: 1203px;}
+.wardrobe{
+  width: 422px;
+  height: 563px;
+  background-image: url(img/wardrobe.png);
+  background-repeat: no-repeat;
+  position: relative;
+  margin-left: 927px;
+  margin-top: 23px;
+}
+
+#map{width: 390px;height: 261px;position: absolute;margin-left: 336px;margin-top: -673px;}
+#map:hover img{
+	color: #fa0000;
+    -webkit-box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+    box-shadow: 0 3px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+}
+.fade {
+    transition: background-color 1000ms;
+}
+
+.fade:hover {
+    background-color: #039be5;
+}
+#table{width: 605px;height: 276px;background-image: url(img/table.png);position: absolute;margin-left: 270px;margin-top: -280px;}
+#lamp{width: 104px;height: 107px;background-image: url(img/lamp.png);position: absolute;margin-left: 366px;margin-top: -370px;}
+#display{width: 126px;height: 113px;position: absolute;margin-left: 469px;margin-top: -397px;}
+#display:hover img{
+	color: #fa0000;
+    -webkit-box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+    box-shadow: 0 3px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+}
+.fade {
+    transition: background-color 1000ms;
+}
+
+.fade:hover {
+    background-color: #039be5;
+}
+#keyboard{width: 107px;height: 24px;background-image: url(img/keyboard.png);position: absolute;margin-left: 517px;margin-top: -265px;}
+
+
+
+nav {
+  width:100%;
+  margin: 0 auto 30px;
+  padding: 24px 0 0 0;
+
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.topmenu > li {
+  display: inline-block;
+    left:834px;
+    top:20px;
+    text-align:center;
+    position: relative;
+
+}
+.topmenu > li:last-child {
+  margin-right: 0;
+}
+
+.menu ul a{
+  display: block;
+	padding: 0px 0 ;
+	margin-left: 65px;
+	font-family:"Christmas ScriptC";
+
+  font-size: 29px;
+  color:#101010;
+
+}
+.menu li a{
+	text-align:center;
+}
+
+
+/*.avtorization{
+
+margin-left: 1000px;
+	position: relative;
+}
+#signup{width: 5%;font-size: 15px;font-family:Segoe UI;font-style: Regular;color:#010101;font-weight: 500;margin-left:196px;position: relative;text-align:center;}
+#login{width:5%;font-size: 15px;font-family:Segoe UI;font-style: Regular;color:#010101;font-weight: 500;margin-left:146px;position: absolute;text-align:center;}
+*/
+/* Middle
+-----------------------------------------------------------------------------*/
+.middle {
+	width: 100%;
+	position: relative;
+}
+.middle:after {
+	display: block;
+	clear: both;
+	content: '';
+}
+.container {
+	width: 100%;
+
+	overflow: hidden;
+}
+.content {
+  width: 100%;
+min-width: 1024px;
+max-width: 1366px;
+height: 768px;
+position: relative;
+background-color:brown;
+background-repeat: no-repeat;
+margin:0 auto;
+margin-top: 230px;
+}
+
+
+
+.registr{
+	width:100%;
+	height:414px;
+	background-image:url(img/rega/bg-rega.png);
+	background-repeat:no-repeat;
+	margin-top:43px;
+	margin-left:20px;
+	position:relative;
+}
+#title-registr{font-size: 23px;font-family:Minion Pro;font-style: Regular;color:#000000;margin-top:19px;margin-left:128px;position: absolute;text-align:center;}
+.registrform{
+margin-left: 5px;
+}
+.nameuser{
+	width:100%;
+	height:50px;
+	background: url(img/rega/bg-name.png);
+	background-repeat: no-repeat;
+	border: none;
+	padding: 0 10px;
+	font-family: Minion Pro;
+	font-style: regular;
+	font-weight:500;
+	color: #000000;
+	font-size: 16px;
+	margin-right:50px;
+	margin-top: 47px;
+	opacity: 0.6;
+	outline: none;
+	line-height: normal;
+}
+.loginuser{
+	width:100%;
+	height:50px;
+	background: url(img/rega/bg-name.png);
+	background-repeat: no-repeat;
+	border: none;
+	padding: 0 10px;
+	font-family: Minion Pro;
+	font-style: regular;
+	font-weight:500;
+	color: #000000;
+	font-size: 16px;
+	opacity: 0.6;
+	margin-right: 40px;
+	margin-top: -4px;
+	outline: none;
+	line-height: normal;
+}
+.emailuser{
+	width:100%;
+	height:50px;
+	background: url(img/rega/bg-name.png);
+	background-repeat: no-repeat;
+	border: none;
+	padding: 0 10px;
+	font-family: Minion Pro;
+	font-style: regular;
+	font-weight:500;
+	color: #000000;
+	font-size: 16px;
+	opacity: 0.6;
+	margin-right: 40px;
+	margin-top: -4px;
+	outline: none;
+	line-height: normal;
+}
+.birthdateuser{
+	width:100%;
+	height:50px;
+	background: url(img/rega/bg-name.png);
+	background-repeat: no-repeat;
+	border: none;
+	padding: 0 10px;
+	font-family: Minion Pro;
+	font-style: regular;
+	font-weight:500;
+	color: #000000;
+	font-size: 16px;
+	opacity: 0.6;
+	margin-right: 40px;
+	margin-top: -4px;
+	outline: none;
+	line-height: normal;
+}
+.passuser{
+	width:100%;
+	height:50px;
+	background: url(img/rega/bg-name.png);
+	background-repeat: no-repeat;
+	border: none;
+	padding: 0 10px;
+	font-family: Minion Pro;
+	font-style: regular;
+	font-weight:500;
+	color: #000000;
+	font-size: 16px;
+	opacity: 0.6;
+	margin-right: 40px;
+	margin-top: -4px;
+	outline: none;
+	line-height: normal;
+}
+.accpassuser{
+	width:100%;
+	height:50px;
+	background: url(img/rega/bg-name.png);
+	background-repeat: no-repeat;
+	border: none;
+	padding: 0 10px;
+	font-family: Minion Pro;
+	font-style: regular;
+	font-weight:500;
+	color: #000000;
+	font-size: 16px;
+	opacity: 0.6;
+	margin-right: 40px;
+	margin-top: -4px;
+	outline: none;
+	line-height: normal;
+}
+
+.button-submit{
+	border:0;
+	width:114px;
+	height:27px;
+	margin-left: 240px;
+	margin-top: 16px;
+	background-color:#b5ffc5;
+	border-radius:8px;
+	color:#000000;
+	font-size:17px;
+	font-weight:500;
+	font-family: Minion Pro;
+	font-style: regular;
+	text-align: center;
+	cursor:pointer;
+	outline: none;
+	line-height: normal;
+}
+#closesignup{width:100%;height: 94px;}
+#returnloginpage{font-size: 4px;font-family:Minion Pro;font-style: Bold;color:#000000;margin-top:19px;margin-left:168px;position: absolute;text-align:center;}
+#checkteck{margin-left: -338px;margin-top:-23px;}
+#checktitle{margin-left: 4px;margin-top:-17px;}
